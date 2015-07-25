@@ -1,0 +1,21 @@
+<ion-view view-title="Irish Pharmacy Finder" ng-controller="mapViewCtrl as vm">
+    <ion-content class="has-header">
+        <ui-gmap-google-map draggable="true" center="vm.map.center" zoom="vm.map.zoom">
+            <ui-gmap-window coords="vm.map.window.model.coords"
+                            show="vm.map.window.show"
+                            options="vm.map.window.options"
+                            closeClick="vm.map.window.closeClick"
+                            templateUrl="'app/mapView/markerView.html'"
+                            templateParameter="vm.map.window">
+
+            </ui-gmap-window>
+            <ui-gmap-markers
+                    models='vm.map.markers'
+                    coords="'coords'"
+                    events="vm.map.markersEvents"
+                    options="'options'"
+                    >
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
+    </ion-content>
+</ion-view>

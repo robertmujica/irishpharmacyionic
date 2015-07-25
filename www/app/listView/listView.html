@@ -1,0 +1,44 @@
+<ion-view view-title="list" ng-controller="listViewCtrl as vm">
+    <ion-content>
+        <ion-list can-swipe="true">
+                <ion-item class="item"
+                          ng-repeat="pharmacy in vm.pharmacies" item="pharmacy"
+                          >
+                    <!-- <i class="icon ion-chevron-right icon-accessory"></i>-->
+                    <div class="row padding-horizontal">
+                        <div class="col">
+                            <h2>{{pharmacy.Name}}</h2>
+
+                        </div>
+                        <div class="col text-right">
+                            <h2>({{pharmacy.DistanceInKilometers | number:1}} Km)</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col item-text-wrap">
+                            {{pharmacy.Address}}
+                        </div>
+                    </div>
+                    <div class="row padding-bottom"></div>
+                    <div class="row row-baseline padding-top" ng-show="true">
+                        <div class="col">
+                            <div class="button-bar">
+                                <a class="button button-clear" href="#" ng-click="vm.navigate(pharmacy)">
+                                        <i class="button button-icon icon ion-navigate"></i>
+                                </a>
+                                <a class="button button-clear" ng-click="vm.makePhoneCall(pharmacy)">
+                                    <i class="button button-icon icon ion-android-call"></i>
+                                </a>
+                                <a class="button button-clear" href="#" ng-click="vm.selectPharmacy(pharmacy)">
+                                    <i class="button button-icon icon ion-more"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>
+

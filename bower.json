@@ -1,0 +1,10 @@
+{
+  "name": "IrishPharmacyFinder",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.2",
+    "angular-google-maps": "~2.0.19",
+    "angular-cache": "~4.2.0",
+    "jquery": "1.9.1"
+  }
+}

@@ -1,0 +1,62 @@
+<ion-view ng-controller="pharmacyViewCtrl as vm">
+    <ion-content class="has-header">
+        <div class="card">
+            <div class="item item-divider item-energized">
+                <div class="row">
+                    <div class="col item-text-wrap">
+                        <h2>
+                            {{vm.pharmacy.pharmacyDetails.Name}}
+                        </h2>
+                    </div>
+                    <div class="col text-right">
+                        <h2>
+                            ({{vm.pharmacy.pharmacyDetails.DistanceInKilometers | number:1}} Km)
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <h2>
+                    {{vm.pharmacy.pharmacyDetails.todayOpeningTime}}
+                </h2>
+            </div>
+            <div class="item item-text-wrap">
+                {{vm.pharmacy.pharmacyDetails.Address}}
+            </div>
+            <div class="item">
+                {{vm.pharmacy.pharmacyDetails.PhoneNumber}}
+            </div>
+        </div>
+        <div class="card">
+            <div class="row">
+                <div class="tabs-icon-top row row-center">
+                    <div class="button-bar">
+                        <a class="button button-clear">
+                            <i class="button button-icon icon ion-navigate"></i>
+                        </a>
+                        <a class="button button-clear">
+                            <i class="button button-icon icon ion-android-call"></i>
+                        </a>
+                        <a class="button button-clear">
+                            <i class="button button-icon icon ion-android-share-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="item item-divider item-energized">
+                Opening Time
+            </div>
+            <div class="row" ng-repeat="openingTime in vm.pharmacy.openingTime">
+                <div class="col">
+                    {{openingTime.dayName}}
+                </div>
+                <div class="col text-right">
+                    {{openingTime.openingTime}}
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

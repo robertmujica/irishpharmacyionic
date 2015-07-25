@@ -1,0 +1,30 @@
+<div ng-controller="markerViewCtrl as vm">
+    <div class="row padding-horizontal">
+        <div class="col">
+            {{parameter.model.data.Name}}
+        </div>
+        <div class="col text-right">
+            ({{parameter.model.data.DistanceInKilometers | number:1}} Km)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col item-text-wrap">
+            {{parameter.model.data.Address}}
+        </div>
+    </div>
+    <div class="row row-baseline padding-top" ng-show="true">
+        <div class="col">
+            <div class="button-bar">
+                <a class="button button-clear" href="#" ng-click="vm.navigate(parameter.model.data)">
+                    <i class="button button-icon icon ion-navigate"></i>
+                </a>
+                <a class="button button-clear" href="#" ng-click="vm.makePhoneCall(parameter.model.data)">
+                    <i class="button button-icon icon ion-android-call"></i>
+                </a>
+                <a class="button button-clear" href="#" ng-click="vm.selectPharmacy(parameter.model.data)">
+                    <i class="button button-icon icon ion-more"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
